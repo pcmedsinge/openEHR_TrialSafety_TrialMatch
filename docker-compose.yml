@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: trial_intelligence_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      EHRBASE_USER_ADMIN: ehrbase
+      EHRBASE_PASSWORD_ADMIN: ehrbase
+      EHRBASE_USER: ehrbase_restricted
+      EHRBASE_PASSWORD: ehrbase_restricted
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - trial_intelligence_db_data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+  ehrbase:
+    image: ehrbase/ehrbase:2.11.0
+    container_name: trial_intelligence_ehrbase
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/ehrbase
+      DB_USER_ADMIN: ehrbase
+      DB_PASS_ADMIN: ehrbase
+      DB_USER: ehrbase_restricted
+      DB_PASS: ehrbase_restricted
+      ADMIN_API_ACTIVE: 'true'
+      EHRBASE_AQL_EXPERIMENTAL_AQLONFOLDER_ENABLED: 'true'
+      WEB_CORS_ALLOWEDORIGINS: "*"
+      WEB_CORS_ALLOWEDORIGINPATTERNS: "*"
+      WEB_CORS_ALLOWEDMETHODS: "GET,PUT,DELETE,POST,OPTIONS"
+      WEB_CORS_ALLOWCREDENTIALS: "false"
+    ports:
+      - "8084:8080"
+
+volumes:
+  trial_intelligence_db_data:
+
+# =============================================================================
+# Module 4 — Clinical Trial Intelligence Suite (TrialSafety + TrialMatch)
+# EHRbase:      http://localhost:8084/ehrbase/rest/status
+# Swagger UI:   http://localhost:8084/ehrbase/swagger-ui/index.html
+# Template API: http://localhost:8084/ehrbase/rest/openehr/v1/definition/template/adl1.4
+# EHR API:      http://localhost:8084/ehrbase/rest/openehr/v1/ehr
+# AQL endpoint: http://localhost:8084/ehrbase/rest/openehr/v1/query/aql
+# Credentials:  ehrbase / ehrbase (admin)
+# PostgreSQL:   localhost:5435  (user: postgres / postgres)
+# NOTE: No port conflict with Modules 1-3 (they use 8080-8082 / 5432-5434)
+# =============================================================================

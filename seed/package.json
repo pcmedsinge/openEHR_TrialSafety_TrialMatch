@@ -1,0 +1,13 @@
+{
+  "name": "module4-seed",
+  "version": "1.0.0",
+  "description": "Seed script for Module 4 EHRbase — TrialSafety + TrialMatch",
+  "scripts": {
+    "seed": "ts-node seed.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}

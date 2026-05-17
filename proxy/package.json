@@ -1,0 +1,10 @@
+{
+  "name": "proxy",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
