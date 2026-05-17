@@ -5,7 +5,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 
 Write-Host ""
 Write-Host "=====================================================" -ForegroundColor Cyan
-Write-Host "  Module 4 - Clinical Trial Intelligence Suite"       -ForegroundColor Cyan
+Write-Host "  Clinical Trial Intelligence Suite"                  -ForegroundColor Cyan
 Write-Host "  Startup"                                             -ForegroundColor Cyan
 Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host ""

@@ -111,10 +111,3 @@ Navigate to `http://localhost:3000`
 
 **GPT-4o AQL generation** — The model is constrained to four proven query templates. Unrestricted generation produces syntactically plausible but semantically broken AQL that EHRbase silently discards.
 
----
-
-## Project Context
-
-Built as part of the Medblocks OpenEHR Developer Bootcamp — Module 4 of 4.
-
-Modules: PostgreSQL schema → EHRbase composition templates → clinical data seeding → AI-powered clinical apps.

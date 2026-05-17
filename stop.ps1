@@ -2,7 +2,7 @@ $ProjectDir = $PSScriptRoot
 
 Write-Host ""
 Write-Host "=====================================================" -ForegroundColor Cyan
-Write-Host "  Module 4 - Clinical Trial Intelligence Suite"        -ForegroundColor Cyan
+Write-Host "  Clinical Trial Intelligence Suite"                   -ForegroundColor Cyan
 Write-Host "  Shutdown"                                             -ForegroundColor Cyan
 Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host ""

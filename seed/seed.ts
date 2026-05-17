@@ -1,5 +1,5 @@
 /**
- * Module 4 — Seed Script
+ * Seed Script — Clinical Trial Intelligence Suite
  * Populates EHRbase (port 8084) with synthetic clinical trial intelligence data.
  *
  * Creates:
@@ -505,7 +505,7 @@ function buildAutismComposition(
 
 async function main(): Promise<void> {
   console.log('╔══════════════════════════════════════════════════════════╗');
-  console.log('║  Module 4 Seed Script — Clinical Trial Intelligence      ║');
+  console.log('║  Seed Script — Clinical Trial Intelligence Suite         ║');
   console.log('╚══════════════════════════════════════════════════════════╝');
   console.log(`EHRbase: ${EHRBASE}`);
   console.log();
